@@ -1,0 +1,21 @@
+{
+  "name": "items-in-storage",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "fetch": "^1.1.0",
+    "jest": "^26.6.3",
+    "next": "10.0.5",
+    "ramda": "^0.27.1",
+    "ramda-godlike": "^0.1.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  }
+}
