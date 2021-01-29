@@ -1,7 +1,6 @@
-const axios = require('axios');
-const { curry } = require('ramda');
+const { get } = require('axios');
+const { viewOnPath, composeP } = require('ramda-godlike');
 
-// fetchData:: a -> {b} -> Promise 
-const fetchData = curry((url, params) => axios.get(url, params).then(res => res.json()));
+const fetchData = composeP(viewOnPath(["data"]), get);
 
-module.exports = fetchData;
+module.exports = { fetchData };
