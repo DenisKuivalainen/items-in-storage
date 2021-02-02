@@ -1,0 +1,23 @@
+{
+    "categories": ["gloves", "facemasks", "beanies"],
+
+    "api": {
+        "products": {
+            "url": "https://bad-api-assignment.reaktor.com/v2/products/",
+            "params": {
+                "headers": {
+                    "x-force-error-mode": "all"
+                }
+            }
+        },
+        "availability": {
+            "url": "https://bad-api-assignment.reaktor.com/v2/availability/",
+            "params": {
+                "headers": {
+                    "x-force-error-mode": "all"
+                }
+            }
+        }
+    }
+
+}

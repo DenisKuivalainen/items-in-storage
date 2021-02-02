@@ -1,12 +1,13 @@
 const { concat } = require("ramda");
 const { composeP } = require("ramda-godlike");
+const { config } = require("../config");
 const { fetchData } = require("./FetchData");
 const { getManufacturersItems } = require("./GetManufacturersItems");
 const { getObject } = require("./GetMergedObject");
 
 const fetchCategory = composeP(
-    url => fetchData(url, {headers: {"x-force-error-mode": "all"}}),
-    concat("https://bad-api-assignment.reaktor.com/v2/products/"),
+    fetchData,
+    concat(config("api", "products", "url")),
 )
 
 const getItems = async (category) => {
