@@ -1,11 +1,11 @@
-const FetchData = require('../src/api/FetchData');
-const { getItems } = require('../src/api/GetManufacturerItems');
+const FetchData = require('../../src/api/FetchData');
+const { getItems } = require('../../src/api/GetManufacturerItems');
 
 const mockObject = (val) => {return {response: val}};
 var arr = [1, 2];
 var str = '[]';
 
-jest.mock('../src/api/FetchData');
+jest.mock('../../src/api/FetchData');
 FetchData.fetchData.mockResolvedValue(mockObject(arr)).mockResolvedValueOnce(mockObject(str));
 
 describe('test GetManufacturerItems ', () => {

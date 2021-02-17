@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Error  sanpshot with message 'This is error' 1`] = `
+<div
+  style={
+    Object {
+      "paddingTop": 100,
+      "textAlign": "center",
+      "width": "100%",
+    }
+  }
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 MuiTypography-colorError"
+  >
+    This is error
+  </h4>
+</div>
+`;

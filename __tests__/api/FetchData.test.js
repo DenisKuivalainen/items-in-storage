@@ -1,4 +1,4 @@
-const { fetchData } = require('../src/api/FetchData');
+const { fetchData } = require('../../src/api/FetchData');
 const axios = require('axios');
 
 var testURL = 'http://feedm3.herokuapp.com/recipe?ing1=&ing2=&ing3=&rows=3&first=0';

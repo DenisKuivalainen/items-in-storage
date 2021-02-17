@@ -29,4 +29,4 @@ const means = val => switchEq(
 const parseAvailability = compose(means, trim, substrHead("</INSTOCKV"), substrLast("<INSTOCKVALUE>"));
 //#endregion
 
-module.exports = { capitalizeMultiple, parseAvailability }
+module.exports = { capitalizeMultiple, parseAvailability, switchEq }

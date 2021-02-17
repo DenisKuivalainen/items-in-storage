@@ -1,7 +1,8 @@
-const { useRouter } = require("next/router");
-const { concat, compose, map } = require("ramda");
-const { Button, Grid } = require("@material-ui/core");
-const { config } = require("../config");
+import React from 'react';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { concat, compose, map } from "ramda";
+import { Button, Grid } from "@material-ui/core";
 
 const Header = (nav) => (
     <Grid container spacing={1} style={{ width: "100%" }}>
@@ -16,17 +17,18 @@ const NavButton = (category) => {
 
     return(
         <Grid item xs={2}>
-            <Button 
-                variant={router.pathname === link ? "contained" : "outlined"}
-                style={{ width: "100%" }}
-                onClick={() => router.push(link)}
-            >
-                {category}
-            </Button>
+            <Link href={link} passHref>
+                <Button 
+                    variant={router.asPath === link ? "contained" : "outlined"}
+                    style={{ width: "100%" }}
+                >
+                    {category}
+                </Button>
+            </Link>
         </Grid>
     );
 }
 
-const Head = compose(Header, map(NavButton))(config("categories"));
+const Head = compose(Header, map(NavButton));
 
-exports.default = Head;
+export default Head;

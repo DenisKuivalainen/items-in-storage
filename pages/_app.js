@@ -1,7 +1,11 @@
-import '../styles/style.css'
+import React from 'react';
+import "../styles/style.css";
+import Layout from "../src/client/Layout";
 
-function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => (
+    <Layout>
+        <Component {...pageProps} />
+    </Layout>
+)
 
 export default App

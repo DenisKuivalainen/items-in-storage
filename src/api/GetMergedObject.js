@@ -1,4 +1,4 @@
-const { find, propEq, curry, toUpper, compose, __, assoc, map, append } = require("ramda")
+const { find, propEq, curry, toUpper, compose, __, assoc, map, append, join } = require("ramda")
 const { viewOnPath, setOnPath, composeP } = require("ramda-godlike");
 const { parseAvailability, capitalizeMultiple } = require("./Styling");
 
@@ -36,8 +36,10 @@ const editItem = curry((catItem, manObject) => {
 
     //how to edit values
     var capitalizeValue = editValue(capitalizeMultiple);
+    var joinValue = editValue(join(", "));
     
     return compose(
+        joinValue("color"),
         capitalizeValue("name"),
         capitalizeValue("manufacturer"),
         item => assoc("availability", getAvailability(item, manObject), item) //allways before capitalizeValue("manufacturer"), or use toLower

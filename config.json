@@ -18,6 +18,9 @@
                 }
             }
         }
-    }
+    },
 
+    "server": {
+        "url": "https://reactorjuniortask.herokuapp.com/"
+    }
 }

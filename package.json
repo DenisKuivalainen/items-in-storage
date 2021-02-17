@@ -5,20 +5,31 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "test": "jest --verbose true --runInBand",
+    "start": "next start -p $PORT",
+    "test": "jest --verbose true --runInBand --silent",
     "coverage": "jest --coverage"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
-    "fetch": "^1.1.0",
-    "jest": "^26.6.3",
     "next": "10.0.5",
     "ramda": "^0.27.1",
     "ramda-godlike": "^0.1.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "rewire": "^5.0.0"
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@testing-library/react": "^11.2.5",
+    "babel-jest": "^26.6.3",
+    "cypress": "^6.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
+    "jest": "^26.6.3",
+    "react-test-renderer": "^17.0.1"
   }
 }

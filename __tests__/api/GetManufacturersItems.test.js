@@ -1,5 +1,5 @@
-const { getItems } = require('../src/api/GetManufacturerItems');
-const { getManufacturersItems } = require('../src/api/GetManufacturersItems');
+const { getItems } = require('../../src/api/GetManufacturerItems');
+const { getManufacturersItems } = require('../../src/api/GetManufacturersItems');
 
 var catArr = [
     {
@@ -39,7 +39,7 @@ var manObject = {
     "abiplos":[1, 2]
 };
 
-jest.mock('../src/api/GetManufacturerItems');
+jest.mock('../../src/api/GetManufacturerItems');
 getItems.mockResolvedValue(manItems)
 
 describe('test GetManufacturersItems ', () => {

@@ -1,6 +1,4 @@
-const { fetchData } = require("../src/api/FetchData");
-const { getManufacturersItems } = require("../src/api/GetManufacturersItems");
-const { getItems } = require("../src/api/GetCategoryItems");
+const { getObject } = require("../../src/api/GetMergedObject");
 
 var catArr = [
     {
@@ -8,7 +6,7 @@ var catArr = [
       "type": "jackets",
       "name": "EWHHOP ROOM",
       "color": [
-        "blue"
+        "blue", "red"
       ],
       "price": 52,
       "manufacturer": "reps"
@@ -64,7 +62,7 @@ var resArr = [
       id: 'f33561de3a864f951a',
       type: 'jackets',
       name: 'Ewhhop Room',
-      color: [ 'blue' ],
+      color: 'blue, red',
       price: 52,
       manufacturer: 'Reps',
       availability: 'in stock'
@@ -73,7 +71,7 @@ var resArr = [
       id: '0e4772c827c4296592fbd',
       type: 'jackets',
       name: 'Weerlep Metropolis Raptor',
-      color: [ 'black' ],
+      color: 'black',
       price: 98,
       manufacturer: 'Reps',
       availability: 'in stock'
@@ -82,21 +80,15 @@ var resArr = [
       id: '6d39a08b3bcae88a67',
       type: 'jackets',
       name: 'Derweer Tyrannus Bang',
-      color: [ 'purple' ],
+      color: 'purple',
       price: 15,
       manufacturer: 'Abiplos',
       availability: 'in stock'
     }
 ]
 
-jest.mock("../src/api/FetchData");
-fetchData.mockResolvedValue(catArr);
-
-jest.mock("../src/api/GetManufacturersItems");
-getManufacturersItems.mockResolvedValue(manObject);
-
-describe('test GetCAtegoryItems ', () => {
-    test('get object of category items with availability', () => {
-        expect(getItems("gloves")).resolves.toEqual(resArr);
+describe('test GetMergedObject ', () => {
+    test('returnes array of edited objects', () => {
+        expect(getObject(catArr, manObject)).toEqual(resArr);
     });
 });
