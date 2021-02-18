@@ -19,7 +19,7 @@ const NavButton = (category) => {
         <Grid item xs={2}>
             <Link href={link} passHref>
                 <Button 
-                    variant={router.asPath === link ? "contained" : "outlined"}
+                    variant={router.asPath === link || router.asPath === "/categories" + link ? "contained" : "outlined"}
                     style={{ width: "100%" }}
                 >
                     {category}

@@ -12,6 +12,12 @@ describe("test TableElement ", () => {
         expect(tree).toMatchSnapshot();
     });
 
+    test("sanpshot of unloaded table", () => {
+        const Loader = () => TableElement(null, 500);
+        const tree = renderer.create(<Loader />).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
     test("forward and backward buttons functionality", () => {
         const { getByTitle } = render(<Table n={24}/>);
         const towardBtn = getByTitle("Next page");

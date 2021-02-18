@@ -43,3 +43,16 @@ code {
 .MuiTypography-h6 {
     margin-bottom: 15px !important;
 }
+
+.MuiLinearProgress-colorPrimary {
+    background-color: #636363 !important;
+}
+
+.MuiLinearProgress-barColorPrimary {
+    background-color: #e0e0e0 !important;
+}
+
+.loading {
+    width: 100%;
+    padding-top: 50px;
+}

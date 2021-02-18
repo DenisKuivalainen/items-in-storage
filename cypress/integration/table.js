@@ -24,7 +24,7 @@ const changeRowsPerPage = (n) => {
 }
 
 describe("Testing table ", () => {
-    beforeEach(() => cy.visit("/").get('span').contains("gloves").click());
+    beforeEach(() => cy.visit("/gloves"));
 
     it("test page change", () => {
         changePage("Next page", "11-20");

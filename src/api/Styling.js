@@ -16,6 +16,7 @@ const substrLast =  curry((reg, str) => compose(last, split(reg))(str));
 const switchEq = curry((expression, conditionValues, results) => {
     // TODO: add check isArray and check results have one more element (which is default value) than conditionValues, add to package.
     //       Instead of equals add support of provided function:: (a -> b) -> Bool
+    // BUG: if array of functions is passed as result, it will launch all functions???
     let casePosition = findIndex(val => equals(expression, val), conditionValues);
     return nth(casePosition, results);
 });

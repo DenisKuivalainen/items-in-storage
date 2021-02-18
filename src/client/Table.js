@@ -1,7 +1,9 @@
 import React from 'react';
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from "@material-ui/core";
 import { compose, length, slice, map, prop, curry, __ } from "ramda";
+import { isArray } from "ramda-godlike";
 import { useState } from "react";
+import Loading from "./Loading";
 
 const BodyCell = (value, width) => (
     <TableCell style={{ minWidth: width }}>
@@ -78,7 +80,7 @@ const TableElement = (data, height) => {
         setPage(0);
     };
 
-    return (
+    const renderTable = () => (
         <Paper style={{width: "100%"}}>
             <TableContainer style={{maxHeight: height}}>
                 <Table stickyHeader aria-label="sticky table">
@@ -98,6 +100,8 @@ const TableElement = (data, height) => {
             />
         </Paper>
     );
+
+    return isArray(data) ? renderTable() : Loading();
 }
 
 export default TableElement;

@@ -2,7 +2,6 @@ import { includes } from "ramda";
 import { viewOnPath } from "ramda-godlike";
 import { getItems } from "../../src/api/GetCategoryItems";
 import { config } from "../../src/config";
-import {data} from '../../src/fakeData';
 
 async function handler(req, res) {
     const category = viewOnPath(["query", "category"], req);
