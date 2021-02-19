@@ -10,22 +10,12 @@ const getData = async (category, router) => {
     //#region Data fetching methods
     const redirect = (url) => window.open(window.location.origin + "/" + url, "_self");
 
-    const responseHandler = (res) => res.status === 200 ? res.json() : redirect(res.status);
-    
-    // switchEq(
-    //     res.status, 
-    //     [200],
-    //     [res.json(), redirect(res.status)]
-    // );
-
-    let url = process.env.NODE_ENV !== 'production' ?
-        'http://localhost:3000/api/items?category=':
-        config("server", "url") + "api/items?category=";
+    const responseHandler = (res) => res.status === 200 ? res.json() : null;
 
     const getData = composeP(
         responseHandler,
         fetch,
-        concat(url)
+        concat("api/items?category=")
     )
     //#endregion
   

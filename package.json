@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "start:8080": "next start -p 8080",
     "test": "jest --verbose true --runInBand --silent",
     "coverage": "jest --coverage"
   },
@@ -17,6 +18,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "http-delayed-response": "^0.0.4",
     "next": "10.0.5",
     "nextjs-redirect": "^5.0.0",
     "ramda": "^0.27.1",
