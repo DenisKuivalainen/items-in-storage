@@ -1,5 +1,5 @@
 const { find, propEq, curry, toUpper, compose, __, assoc, map, append, join } = require("ramda")
-const { viewOnPath, setOnPath, composeP } = require("ramda-godlike");
+const { viewOnPath, setOnPath } = require("ramda-godlike");
 const { parseAvailability, capitalizeMultiple } = require("./Styling");
 
 //#region getAvailability:: a -> {k: [v]} -> String
