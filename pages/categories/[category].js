@@ -8,7 +8,7 @@ import { useClientHeight } from "../../src/ClientHeight";
 const getData = async (category, router) => {
     //#region Data fetching methods
     // Redirect if not 200
-    const redirect = (res) => {console.log(res.data);   router.push("/" + res.status);}
+    const redirect = ({status, data}) => {console.warn(data);   router.push("/" + status);}
 
     //Check if 200
     const responseHandler = (res) => res.status === 200 ? res.data : redirect(res);

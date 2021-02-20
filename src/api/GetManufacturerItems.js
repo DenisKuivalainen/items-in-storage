@@ -12,10 +12,24 @@ const requestForItems = composeP(
 
 // get data anyway
 const getItems = async (manufacturer) => {
-    let requestedItems = await requestForItems(manufacturer);
+    let depth = 0;
+
+    // Check recursion depth
+    const checkDepth = () => {
+        depth++;
+        if(depth > 5) throw "Too much recursion";
+    }
+
+    const fetchItems = async () => {
+        checkDepth();
+
+        let requestedItems = await requestForItems(manufacturer);
+
+        return isArray(requestedItems) ?
+            requestedItems :
+            await fetchItems();
+    }
     
-    return isArray(requestedItems) ?
-        requestedItems :
-        await getItems(manufacturer);
+    return await fetchItems();
 }
 module.exports = { getItems };
