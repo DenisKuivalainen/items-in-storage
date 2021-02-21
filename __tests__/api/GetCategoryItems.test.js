@@ -1,6 +1,6 @@
-const { fetchData } = require("../../src/api/FetchData");
 const { getManufacturersItems } = require("../../src/api/GetManufacturersItems");
 const { getItems } = require("../../src/api/GetCategoryItems");
+const { getRowCategory } = require("../../src/api/GetRawCategoryItems");
 
 var catArr = [
     {
@@ -89,8 +89,8 @@ var resArr = [
     }
 ]
 
-jest.mock("../../src/api/FetchData");
-fetchData.mockResolvedValue(catArr);
+jest.mock("../../src/api/GetRawCategoryItems");
+getRowCategory.mockResolvedValue(catArr);
 
 jest.mock("../../src/api/GetManufacturersItems");
 getManufacturersItems.mockResolvedValue(manObject);
