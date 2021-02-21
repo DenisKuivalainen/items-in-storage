@@ -152,7 +152,7 @@ const recursion = (request) => async (arg) => {
 }
 ```
 
-## License
+## Testing
 Application was tested with Jest (unit testing) and Cypress (e2e). All functions and functionality were covered.
 ![jest](https://i.ibb.co/dkvJmTz/jest.png) ![Cypress](https://i.ibb.co/TWVdNVt/cy.png)
 
